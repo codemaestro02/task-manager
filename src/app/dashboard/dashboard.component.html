@@ -9,9 +9,9 @@
     </div>
   </div>
 
-  <div class="ui three column grid">
+  <div class="ui three column grid stackable">
     <div class="column task-new">
-      <div class="ui raised clearing segment inverted blue">
+      <div class="ui raised segment inverted blue">
         <h3 class="ui header">New Task</h3>
         <div cdkDropList #newTaskList="cdkDropList" id="newTaskList" [cdkDropListData]="newTasks"
         (cdkDropListDropped)="drop($event)"

@@ -18,8 +18,8 @@ export class TaskFormComponent {
     });
   }
 
-  onSubmit(){
-    if (this.taskForm.valid){
+  onSubmit() {
+    if (this.taskForm.valid) {
       this.taskService.addTask(this.taskForm.value['title'], this.taskForm.value['description']);
       this.router.navigate(['/dashboard']);
       this.taskForm.reset();
