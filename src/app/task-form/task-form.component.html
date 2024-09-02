@@ -1,0 +1,21 @@
+<div class="ui container">
+  <h2 class="ui dividing header">Add New Task</h2>
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="ui form blue inverted segment">
+    <div class="field">
+      <label>Task Title</label>
+      <div class="ui input">
+        <input formControlName="title" sui-input type="text" placeholder="Enter task title..." />
+      </div>
+    </div>
+    <div class="field">
+      <label>Task Description</label>
+      <div class="ui input">
+        <input formControlName="description" sui-input type="text" placeholder="Enter task description..." />
+      </div>
+    </div>
+    <button class="ui button" type="submit" [disabled]="taskForm.invalid">
+      <i class="plus icon"></i>
+      Add Task
+    </button>
+  </form>
+</div>

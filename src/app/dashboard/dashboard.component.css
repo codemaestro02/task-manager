@@ -1,0 +1,41 @@
+.ui.grid > .column {
+  padding-top: 2rem !important;
+  font-family: "Raleway", sans-serif;
+}
+
+
+.ui.raised.segment {
+  min-height: 300px;
+  font-weight: 600;
+}
+
+.ui.message {
+  text-align: center;
+  padding: 2rem;
+  margin: 0;
+}
+
+h3.ui.header{
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+.ui.container h2.ui.header{
+  color: rgba(0, 72, 108, 0.78);
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+}
+
+.task-new .card{
+  box-shadow: 0 2px 4px 0 cornflowerblue, 0 2px 10px 0 rgba(34, 36, 38, .15);
+}
+
+.task-progress .card{
+  box-shadow: 0 2px 4px 0 yellow, 0 2px 10px 0 rgba(34, 36, 38, .15);
+}
+
+.task-completed .card{
+  box-shadow: 0 2px 4px 0 green, 0 2px 10px 0 rgba(34, 36, 38, .15);
+}
+

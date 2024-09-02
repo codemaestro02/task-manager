@@ -1,0 +1,84 @@
+<div class="ui container">
+  <div class="ui grid">
+    <div class="sixteen wide column">
+      <div class="ui right floated primary button" routerLink="/task-form">
+        <i class="plus icon"></i>
+        Add Task
+      </div>
+      <h2 class="ui header">Task Dashboard</h2>
+    </div>
+  </div>
+
+  <div class="ui three column grid">
+    <div class="column task-new">
+      <div class="ui raised clearing segment inverted blue">
+        <h3 class="ui header">New Task</h3>
+        <div cdkDropList #newTaskList="cdkDropList" id="newTaskList" [cdkDropListData]="newTasks"
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListConnectedTo]="['inProgressList', 'completedList']">
+          <div *ngFor="let task of newTasks" cdkDrag class="ui fluid card">
+            <div class="content">
+              <div class="header">{{ task.title }}</div>
+              <div class="description">{{ task.description }}</div>
+            </div>
+<!--            <div class="extra content">-->
+<!--              <a>-->
+<!--                <i class="hashtag icon"></i>-->
+<!--                {{ task.taskId }}-->
+<!--              </a>-->
+<!--            </div>-->
+          </div>
+          <div *ngIf="newTasks.length === 0" class="ui message">No new tasks</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column task-progress">
+      <div class="ui raised segment inverted yellow">
+        <h3 class="ui header">In Progress</h3>
+        <div cdkDropList #inProgressList="cdkDropList" id="inProgressList"
+        [cdkDropListData]="inProgressTasks"
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListConnectedTo]="['newTaskList', 'completedList']">
+          <div *ngFor="let task of inProgressTasks" cdkDrag class="ui fluid card">
+            <div class="content">
+              <div class="header">{{ task.title }}</div>
+              <div class="description">{{ task.description }}</div>
+            </div>
+<!--            <div class="extra content">-->
+<!--              <a>-->
+<!--                <i class="hashtag icon"></i>-->
+<!--                {{ task.taskId }}-->
+<!--              </a>-->
+<!--            </div>-->
+          </div>
+          <div *ngIf="inProgressTasks.length === 0" class="ui message">No tasks in progress</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column task-completed">
+      <div class="ui raised segment inverted green">
+        <h3 class="ui header">Done</h3>
+        <div cdkDropList #completedList="cdkDropList" id="completedList"
+        [cdkDropListData]="completedTasks"
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListConnectedTo]="['newTaskList', 'inProgressList']">
+          <div *ngFor="let task of completedTasks" cdkDrag class="ui fluid card">
+            <div class="content">
+              <div class="header">{{ task.title }}</div>
+              <div class="description">{{ task.description }}</div>
+            </div>
+<!--            <div class="extra content">-->
+<!--              <a>-->
+<!--                <i class="hashtag icon"></i>-->
+<!--                {{ task.taskId }}-->
+<!--              </a>-->
+<!--            </div>-->
+          </div>
+          <div *ngIf="completedTasks.length === 0" class="ui message">No tasks done</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
