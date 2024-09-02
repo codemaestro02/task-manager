@@ -14,7 +14,7 @@ export class TaskFormComponent {
   constructor(private fb: FormBuilder, private router: Router, private taskService: TaskService) {
     this.taskForm = this.fb.group({
       title: ['', [Validators.required]],
-      description: ['', [Validators.required, Validators.maxLength(15)]],
+      description: ['', [Validators.maxLength(15), Validators.required]],
     });
   }
 
@@ -26,4 +26,14 @@ export class TaskFormComponent {
     }
   }
 
+  // hasError(controlName: string, errorName: string){
+  //   if (this.taskForm.value['description'].length > 0){
+  //     return this.taskForm.controls[controlName].hasError(errorName);
+  //   }
+  //   return false;
+  // }
+  //
+  // getErrorMessage(controlName: string): string {
+  //   return this.taskForm.controls[controlName].hasError("max") ? "Character Limit is 15!" : ''
+  // }
 }

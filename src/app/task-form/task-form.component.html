@@ -4,13 +4,13 @@
     <div class="field">
       <label>Task Title</label>
       <div class="ui input">
-        <input formControlName="title" sui-input type="text" placeholder="Enter task title..." />
+        <input formControlName="title" sui-input type="text" placeholder="Enter task title..."/>
       </div>
     </div>
     <div class="field">
-      <label>Task Description</label>
+      <label>Task Description <small class="warning">(Character limit is 15)</small></label>
       <div class="ui input">
-        <input formControlName="description" sui-input type="text" placeholder="Enter task description..." />
+        <input formControlName="description" sui-input type="text" placeholder="Enter task description..."/>
       </div>
     </div>
     <button class="ui button" type="submit" [disabled]="taskForm.invalid">
